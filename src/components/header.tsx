@@ -9,7 +9,7 @@ export const Header = () => {
 					rel="noreferrer"
 				>
 					<img
-						src="/src/assets/icon.webp"
+						src="/icon.webp"
 						className="w-12 h-12"
 						alt="Novabyte Logo"
 						aria-label="Novabyte Logo"
