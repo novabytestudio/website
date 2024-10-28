@@ -4,49 +4,43 @@
 
 @font-face {
 	font-family: "Nippo";
-	src: local("Nippo-Extralight")
+	src: url("Nippo-Extralight")
 		url("../src/assets/fonts/Nippo-Extralight.woff2") format("woff2");
 	font-weight: 200;
-	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Nippo";
-	src: local("Nippo-Light") url("../src/assets/fonts/Nippo-Light.woff2")
+	src: url("../src/assets/fonts/Nippo-Light.woff2")
 		format("woff2");
 	font-weight: 300;
-	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Nippo";
-	src: local("Nippo-Regular") url("../src/assets/fonts/Nippo-Regular.woff2")
+	src: url("../src/assets/fonts/Nippo-Regular.woff2")
 		format("woff2");
 	font-weight: 400;
-	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Nippo";
-	src: local("Nippo-Medium") url("../src/assets/fonts/Nippo-Medium.woff2")
+	src: url("../src/assets/fonts/Nippo-Medium.woff2")
 		format("woff2");
 	font-weight: 500;
-	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Nippo";
-	src: local("Nippo-Bold") url("../src/assets/fonts/Nippo-Bold.woff2")
+	src: url("../src/assets/fonts/Nippo-Bold.woff2")
 		format("woff2");
 	font-weight: 700;
-	font-display: swap;
 	font-style: normal;
 }
 @font-face {
 	font-family: "Nippo";
-	src: local("Nippo-Variable") url("../src/assets/fonts/Nippo-Variable.woff2")
+	src: url("../src/assets/fonts/Nippo-Variable.woff2")
 		format("woff2");
-	font-weight: 200 700;
 	font-display: swap;
 	font-style: normal;
 }
@@ -56,8 +50,29 @@
 		@apply bg-black/90;
 		@apply text-gray-100;
 	}
+	
 	body {
 		font-family: "Nippo", sans-serif !important;
 		scroll-behavior: smooth !important;
+	}
+
+	::selection,
+	::-moz-selection {
+		@apply bg-purple-400/60;
+	}
+
+	// Firefox => https://bugzilla.mozilla.org/show_bug.cgi?id=1432935
+	::-webkit-scrollbar {
+		width: 2px;
+		height: 2px;
+		&:hover {
+			width: 4px;
+			height: 4px;
+		}
+		@apply bg-transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		@apply bg-blue-400;
 	}
 }

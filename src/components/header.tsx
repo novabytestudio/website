@@ -5,15 +5,17 @@ export const Header = () => {
 				<a
 					href="https://www.linkedin.com/company/103792680/"
 					target="_blank"
-					className="flex items-center justify-start px-6 py-4 gap-x-4"
+					className="w-fit flex items-center justify-start px-6 py-4 gap-x-4"
 					rel="noreferrer"
 				>
 					<img
 						src="/icon.webp"
 						className="w-12 h-12"
-						alt="Novabyte Logo"
-						aria-label="Novabyte Logo"
-						aria-labelledby="Novabyte Logo"
+						alt="Novabyte"
+						aria-label="Novabyte"
+						aria-labelledby="Novabyte"
+						loading="lazy"
+						fetchPriority="high"
 					/>
 					<span className="text-2xl tracking-wide font-medium">Novabyte</span>
 				</a>
