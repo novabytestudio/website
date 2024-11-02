@@ -10,7 +10,7 @@ export const Header = () => {
 				>
 					<img
 						src="/icon.webp"
-						className="w-12 h-12"
+						className="w-12 h-12 rounded-full"
 						alt="Novabyte"
 						aria-label="Novabyte"
 						aria-labelledby="Novabyte"
