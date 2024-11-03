@@ -34,7 +34,7 @@ export const DevelopmentProcess = () => {
 
 	return (
 		<>
-			<section className="w-full max-md:py-28 min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex items-center justify-center">
+			<section className="w-full py-5 min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex items-center justify-center">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}

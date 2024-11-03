@@ -15,7 +15,7 @@ export const Hero = () => {
 	return (
 		<>
 			<Header />
-			<section className="w-full max-md:py-28 min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex items-center justify-center px-4">
+			<section className="w-full py-24 min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex items-center justify-center px-4">
 				<div className="container mx-auto">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}

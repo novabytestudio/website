@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MegaScroll from "react-mega-scroll";
 import { AnimatePresence, motion } from "framer-motion";
 // Components \\
@@ -10,6 +10,12 @@ import { ContactAndCredits } from "@/src/components/contact";
 
 export const App = () => {
 	const [active, setActive] = useState(0);
+
+	useEffect(() => {
+		if ('scrollRestoration' in window.history) {
+			window.history.scrollRestoration = 'manual'
+		}		
+	}, [])
 
 	return (
 		<div className="h-screen overflow-y-auto">

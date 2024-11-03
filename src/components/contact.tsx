@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, LinkedinIcon, GithubIcon, PhoneIcon, MapPin } from "lucide-react";
+import { Send, LinkedinIcon, GithubIcon, PhoneIcon, MapPin, InstagramIcon } from "lucide-react";
 
 export const ContactAndCredits = () => {
 	const [formData, setFormData] = useState({
@@ -25,7 +25,7 @@ export const ContactAndCredits = () => {
 
 	return (
 		<>
-			<section className="w-full max-md:py-28 min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+			<section className="w-full min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -142,23 +142,11 @@ export const ContactAndCredits = () => {
 							<div className="w-full md:w-1/3 mb-6 md:mb-0">
 								<p className="text-sm">&copy; 2024 Novabyte Studio. Todos los derechos reservados.</p>
 							</div>
-							<div className="w-full md:w-1/3 mb-6 md:mb-0 text-center">
-								<p className="text-sm">
-									Desarrolado con ❤️ por{" "}
-									<a
-										href="https://www.linkedin.com/in/fedetomassini/"
-										className="text-indigo-400/60 hover:text-indigo-400/100 transition-colors"
-										target="_blank"
-									>
-										@fedetomassini
-									</a>
-								</p>
-							</div>
 							<div className="w-full md:w-1/3 flex justify-end space-x-4">
 								<motion.a
 									href="https://www.linkedin.com/company/103792680/"
 									target="_blank"
-									whileHover={{ scale: 1.2 }}
+									whileHover={{ scale: 1.1 }}
 									whileTap={{ scale: 0.9 }}
 								>
 									<LinkedinIcon className="h-6 w-6 hover:text-indigo-400 transition-colors" />
@@ -166,10 +154,13 @@ export const ContactAndCredits = () => {
 								<motion.a
 									href="https://github.com/NovabyteStudio/"
 									target="_blank"
-									whileHover={{ scale: 1.2 }}
+									whileHover={{ scale: 1.1 }}
 									whileTap={{ scale: 0.9 }}
 								>
 									<GithubIcon className="h-6 w-6 hover:text-indigo-400 transition-colors" />
+								</motion.a>
+								<motion.a href="#" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+									<InstagramIcon className="h-6 w-6 hover:text-indigo-400 transition-colors" />
 								</motion.a>
 							</div>
 						</div>

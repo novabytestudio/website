@@ -9,12 +9,12 @@ export const ClientTestimonials = () => {
 	const [direction, setDirection] = useState(1);
 
 	const handleNext = () => {
-		setDirection(1); // Dirección hacia la derecha
+		setDirection(1);
 		setCurrentIndex((prevIndex) => (prevIndex + 3 >= testimonials.length ? 0 : prevIndex + 3));
 	};
 
 	const handlePrev = () => {
-		setDirection(-1); // Dirección hacia la izquierda
+		setDirection(-1);
 		setCurrentIndex((prevIndex) =>
 			prevIndex - 3 < 0 ? testimonials.length - (testimonials.length % 3 || 3) : prevIndex - 3,
 		);
@@ -24,7 +24,7 @@ export const ClientTestimonials = () => {
 
 	return (
 		<>
-			<section className="w-full max-md:py-28 py-20 min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex items-center justify-center">
+			<section className="w-full py-5 min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white flex items-center justify-center">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
