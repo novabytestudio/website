@@ -1,7 +1,7 @@
 export const Header = () => {
 	return (
 		<>
-			<header className="w-full absolute top-0 left-0">
+			<header className="w-full z-20 absolute top-0 left-0">
 				<a
 					href="https://www.linkedin.com/company/103792680/"
 					target="_blank"

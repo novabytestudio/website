@@ -25,12 +25,25 @@ export const ContactAndCredits = () => {
 
 	return (
 		<>
-			<section className="w-full min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+			<svg className="absolute top-0 z-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<defs>
+					<linearGradient id="heroGradient" x1="0" x2="0" y1="0" y2="1">
+						<stop offset="0%" stopColor="#111827" />
+						<stop offset="100%" stopColor="#1f2937" />
+					</linearGradient>
+				</defs>
+				<path
+					fill="url(#heroGradient)"
+					fillOpacity="1"
+					d="M0,96L0,256L102.9,256L102.9,32L205.7,32L205.7,192L308.6,192L308.6,256L411.4,256L411.4,224L514.3,224L514.3,32L617.1,32L617.1,192L720,192L720,128L822.9,128L822.9,192L925.7,192L925.7,32L1028.6,32L1028.6,128L1131.4,128L1131.4,160L1234.3,160L1234.3,256L1337.1,256L1337.1,160L1440,160L1440,0L1337.1,0L1337.1,0L1234.3,0L1234.3,0L1131.4,0L1131.4,0L1028.6,0L1028.6,0L925.7,0L925.7,0L822.9,0L822.9,0L720,0L720,0L617.1,0L617.1,0L514.3,0L514.3,0L411.4,0L411.4,0L308.6,0L308.6,0L205.7,0L205.7,0L102.9,0L102.9,0L0,0L0,0Z"
+				></path>
+			</svg>
+			<section className="w-full flex flex-col z-20 py-5 min-h-screen text-white">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
-					className="container mx-auto px-4"
+					className="container z-20 mx-auto px-4"
 				>
 					<motion.h2
 						className="text-3xl md:text-4xl font-bold py-10 text-center"
@@ -47,7 +60,7 @@ export const ContactAndCredits = () => {
 							animate={{ opacity: 1, x: 0 }}
 							transition={{ duration: 0.6 }}
 						>
-							<form onSubmit={handleSubmit} className="space-y-6">
+							<form onSubmit={handleSubmit} className="space-y-6 ">
 								<div>
 									<label htmlFor="name" className="block text-sm font-medium mb-2">
 										Nombre
@@ -59,7 +72,6 @@ export const ContactAndCredits = () => {
 										value={formData.name}
 										onChange={handleChange}
 										required
-										disabled={true}
 										className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
 									/>
 								</div>
@@ -74,7 +86,6 @@ export const ContactAndCredits = () => {
 										value={formData.email}
 										onChange={handleChange}
 										required
-										disabled={true}
 										className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
 									/>
 								</div>
@@ -89,7 +100,6 @@ export const ContactAndCredits = () => {
 										onChange={handleChange}
 										required
 										rows={4}
-										disabled={true}
 										className="w-full px-3 py-2 resize-none bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
 									></textarea>
 								</div>
@@ -98,10 +108,9 @@ export const ContactAndCredits = () => {
 									className="w-full bg-blue-400/60 hover:bg-blue-400/80 disabled:bg-blue-400/10 disabled:text-white/30 text-white font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center"
 									// whileHover={{ scale: 1.05 }}
 									// whileTap={{ scale: 0.95 }}
-									disabled={true}
 								>
+									<Send className="mr-2 h-5 w-5" />
 									Enviar Mensaje
-									<Send className="ml-2 h-5 w-5" />
 								</motion.button>
 							</form>
 						</motion.div>
@@ -136,7 +145,7 @@ export const ContactAndCredits = () => {
 						</motion.div>
 					</div>
 				</motion.div>
-				<footer className="mt-24 border-t border-gray-700 py-5">
+				<footer className="border-t z-20 mt-20 py-4 border-gray-700">
 					<div className="container mx-auto">
 						<div className="flex flex-wrap justify-between items-center">
 							<div className="w-full md:w-1/3 mb-6 md:mb-0">
@@ -167,6 +176,19 @@ export const ContactAndCredits = () => {
 					</div>
 				</footer>
 			</section>
+			<svg className="absolute z-10 bottom-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+				<defs>
+					<linearGradient id="heroGradient" x1="0" x2="0" y1="0" y2="1">
+						<stop offset="0%" stop-color="#111827" />
+						<stop offset="100%" stop-color="#1f2937" />
+					</linearGradient>
+				</defs>
+				<path
+					fill="url(#heroGradient)"
+					fill-opacity="1"
+					d="M0,96L0,256L102.9,256L102.9,32L205.7,32L205.7,192L308.6,192L308.6,256L411.4,256L411.4,224L514.3,224L514.3,32L617.1,32L617.1,192L720,192L720,128L822.9,128L822.9,192L925.7,192L925.7,32L1028.6,32L1028.6,128L1131.4,128L1131.4,160L1234.3,160L1234.3,256L1337.1,256L1337.1,160L1440,160L1440,320L1337.1,320L1337.1,320L1234.3,320L1234.3,320L1131.4,320L1131.4,320L1028.6,320L1028.6,320L925.7,320L925.7,320L822.9,320L822.9,320L720,320L720,320L617.1,320L617.1,320L514.3,320L514.3,320L411.4,320L411.4,320L308.6,320L308.6,320L205.7,320L205.7,320L102.9,320L102.9,320L0,320L0,320Z"
+				></path>
+			</svg>
 		</>
 	);
 };

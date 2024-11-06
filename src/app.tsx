@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MegaScroll from "react-mega-scroll";
 import { AnimatePresence, motion } from "framer-motion";
 // Components \\
@@ -7,15 +8,16 @@ import { ServiceShowcase } from "@/src/components/services";
 import { DevelopmentProcess } from "@/src/components/development";
 import { ClientTestimonials } from "@/src/components/testimonials";
 import { ContactAndCredits } from "@/src/components/contact";
+import { NewProyect } from "@/src/components/new-proyect";
 
-export const App = () => {
+const MainPage = () => {
 	const [active, setActive] = useState(0);
 
 	useEffect(() => {
-		if ('scrollRestoration' in window.history) {
-			window.history.scrollRestoration = 'manual'
-		}		
-	}, [])
+		if ("scrollRestoration" in window.history) {
+			window.history.scrollRestoration = "manual";
+		}
+	}, []);
 
 	return (
 		<div className="h-screen overflow-y-auto">
@@ -39,5 +41,16 @@ export const App = () => {
 				))}
 			</MegaScroll>
 		</div>
+	);
+};
+
+export const App = () => {
+	return (
+		<Router>
+			<Routes>
+				<Route path="/" element={<MainPage />} />
+				<Route path="/crear" element={<NewProyect />} />
+			</Routes>
+		</Router>
 	);
 };
