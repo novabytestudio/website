@@ -94,7 +94,7 @@ export const DevelopmentProcess = () => {
 						transition={{ duration: 0.6, delay: 1.2 }}
 					>
 						<motion.a
-							href="#contact"
+							href="/crear"
 							className="bg-gradient-to-r from-purple-400/60 to-purple-400/80 text-white font-bold py-3 px-8 rounded-lg inline-block transition duration-300"
 							whileHover={{
 								scale: 1.05,
@@ -102,7 +102,7 @@ export const DevelopmentProcess = () => {
 							}}
 							whileTap={{ scale: 0.95 }}
 						>
-							Inicia tu Proyecto
+							Inicia tu Proceso
 						</motion.a>
 					</motion.div>
 				</motion.div>

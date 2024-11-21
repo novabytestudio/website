@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, LinkedinIcon, GithubIcon, PhoneIcon, MapPin, InstagramIcon } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export const ContactAndCredits = () => {
 	const [formData, setFormData] = useState({
@@ -8,6 +9,9 @@ export const ContactAndCredits = () => {
 		email: "",
 		message: "",
 	});
+	const [isSending, setIsSending] = useState(false);
+	const [successMessage, setSuccessMessage] = useState("");
+	const [errorMessage, setErrorMessage] = useState("");
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const { name, value } = e.target;
@@ -19,8 +23,27 @@ export const ContactAndCredits = () => {
 
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		// # Pending
-		setFormData({ name: "", email: "", message: "" });
+		setIsSending(true);
+		setSuccessMessage("");
+		setErrorMessage("");
+
+		emailjs
+			.send(
+				"service_234fcid",
+				"template_5tetr9h",
+				formData,
+				"lWFvIQT0fF1OR-0wP"
+			)
+			.then(() => {
+				setSuccessMessage("Mensaje enviado con éxito. ¡Gracias por contactarnos!");
+				setFormData({ name: "", email: "", message: "" });
+			})
+			.catch(() => {
+				setErrorMessage("Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.");
+			})
+			.finally(() => {
+				setIsSending(false);
+			});
 	};
 
 	return (
@@ -37,7 +60,7 @@ export const ContactAndCredits = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					Contáctanos
+					Contactanos
 				</motion.h2>
 				<div className="flex flex-wrap -mx-4 mb-12">
 					<motion.div
@@ -91,14 +114,21 @@ export const ContactAndCredits = () => {
 							</div>
 							<motion.button
 								type="submit"
-								className="w-full bg-blue-400/60 hover:bg-blue-400/80 disabled:bg-blue-400/10 disabled:text-white/30 text-white font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center"
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
+								disabled={isSending}
+								className={`w-full ${
+									isSending
+										? "bg-blue-400/10 text-white/30"
+										: "bg-blue-400/60 hover:bg-blue-400/80 text-white"
+								} font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center`}
+								whileHover={{ scale: isSending ? 1 : 1.025 }}
+								whileTap={{ scale: isSending ? 1 : 0.95 }}
 							>
 								<Send className="mr-2 h-5 w-5" />
-								Enviar Mensaje
+								{isSending ? "Enviando..." : "Enviar Mensaje"}
 							</motion.button>
 						</form>
+						{successMessage && <p className="text-green-400 mt-4">{successMessage}</p>}
+						{errorMessage && <p className="text-red-400 mt-4">{errorMessage}</p>}
 					</motion.div>
 					<motion.div
 						className="w-full lg:w-1/2 px-4"
