@@ -4,18 +4,15 @@ import { SVGBackground } from "@/src/components/svg-background";
 export const NewProyect = () => {
 	return (
 		<>
-			<SVGBackground/>
+			<SVGBackground />
 			<div className="w-full min-h-screen z-40 text-white p-4 md:p-8">
 				<div className="max-w-4xl mx-auto">
-					<div className="bg-white rounded-xl shadow-lg overflow-hidden">
-						<div className="p-4 bg-blue-400">
-							<h1 className="text-white text-xl md:text-2xl font-medium text-center">¡Iniciá tu Proyecto!</h1>
-						</div>
+					<div className="bg-transparent rounded-xl shadow-lg overflow-hidden">
 						<div className="aspect-[4/5] w-full">
 							<iframe
-								src="https://forms.gle/NidRoAqgYsiQ3zrx7"
+								src="https://docs.google.com/forms/d/e/1FAIpQLSdYm8l2jmS8EM3iCEA8HmJcqqwdWnX8YCiHXyYZr6eHFF7P8Q/viewform?embedded=true"
 								className="w-full h-full border-0"
-								title="Google Form"
+								title="Inicá tu proyecto"
 								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 								allowFullScreen
 							/>
