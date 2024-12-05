@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight } from "lucide-react";
 
 export const ServiceShowcase = () => {
 	const [showAllServices, setShowAllServices] = useState(false);
@@ -40,7 +40,10 @@ export const ServiceShowcase = () => {
 
 	return (
 		<>
-			<section id="services" className="w-full z-20 py-24 min-h-screen text-white flex items-center justify-center px-4">
+			<section
+				id="services"
+				className="w-full z-20 py-24 min-h-screen text-white flex items-center justify-center px-4"
+			>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -114,4 +117,3 @@ export const ServiceShowcase = () => {
 		</>
 	);
 };
-

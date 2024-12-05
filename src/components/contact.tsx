@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, LinkedinIcon, GithubIcon, PhoneIcon, MapPin, InstagramIcon } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { env } from "@/src/lib/env";
 
 export const ContactAndCredits = () => {
 	const [formData, setFormData] = useState({
@@ -28,12 +29,7 @@ export const ContactAndCredits = () => {
 		setErrorMessage("");
 
 		emailjs
-			.send(
-				"service_234fcid",
-				"template_5tetr9h",
-				formData,
-				"lWFvIQT0fF1OR-0wP"
-			)
+			.send(env.SERVICE_ID as string, env.TEMPLATE_ID as string, formData, env.PUBLIC_KEY as string)
 			.then(() => {
 				setSuccessMessage("Mensaje enviado con éxito. ¡Gracias por contactarnos!");
 				setFormData({ name: "", email: "", message: "" });
@@ -80,6 +76,7 @@ export const ContactAndCredits = () => {
 									name="name"
 									value={formData.name}
 									onChange={handleChange}
+									placeholder="Ingrese su nombre..."
 									required
 									className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
 								/>
@@ -94,6 +91,7 @@ export const ContactAndCredits = () => {
 									name="email"
 									value={formData.email}
 									onChange={handleChange}
+									placeholder="Ingrese su correo electrónico..."
 									required
 									className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
 								/>
@@ -107,6 +105,7 @@ export const ContactAndCredits = () => {
 									name="message"
 									value={formData.message}
 									onChange={handleChange}
+									placeholder="Describa el motivo de su contacto..."
 									required
 									rows={4}
 									className="w-full px-3 py-2 resize-none bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
@@ -116,9 +115,7 @@ export const ContactAndCredits = () => {
 								type="submit"
 								disabled={isSending}
 								className={`w-full ${
-									isSending
-										? "bg-blue-400/10 text-white/30"
-										: "bg-blue-400/60 hover:bg-blue-400/80 text-white"
+									isSending ? "bg-blue-400/10 text-white/30" : "bg-blue-400/60 hover:bg-blue-400/80 text-white"
 								} font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center`}
 								whileHover={{ scale: isSending ? 1 : 1.025 }}
 								whileTap={{ scale: isSending ? 1 : 0.95 }}
