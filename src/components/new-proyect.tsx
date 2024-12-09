@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 // Components \\
 import { SVGBackground } from "@/src/components/svg-background";
 
@@ -5,7 +7,7 @@ export const NewProyect = () => {
 	return (
 		<>
 			<SVGBackground />
-			<div className="w-full min-h-screen z-40  p-4 md:p-8">
+			<div className="w-full min-h-screen z-40 p-4 md:p-8">
 				<div className="max-w-4xl mx-auto">
 					<div className="bg-transparent rounded-xl overflow-hidden">
 						<div className="min-h-screen w-full">
@@ -18,8 +20,9 @@ export const NewProyect = () => {
 							/>
 						</div>
 					</div>
-					<p className="text-center text-sm text-[#1c1c1c] mt-4">
-						Si el formulario no carga correctamente, puedes{" "}
+					<div className="w-full flex flex-col mx-auto justify-center">
+					<p className="text-center text-sm mt-4">
+						Si el formulario no carga correctamente, podes{" "}
 						<a
 							href="https://forms.gle/NidRoAqgYsiQ3zrx7"
 							target="_blank"
@@ -30,6 +33,16 @@ export const NewProyect = () => {
 						</a>
 						.
 					</p>
+					<Link to="/" className="mx-auto mt-8">
+								<motion.button
+									whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
+									transition={{ ease: "easeInOut" }}
+									className="bg-[#2F3645] text-[#e8e8e8] font-bold py-3 px-6 rounded-lg drop-shadow-md"
+								>
+									Volver al Inicio
+								</motion.button>
+							</Link>
+					</div>
 				</div>
 			</div>
 		</>
