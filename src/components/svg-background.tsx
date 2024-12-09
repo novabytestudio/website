@@ -2,7 +2,7 @@ import React from "react";
 
 export const SVGBackground: React.FC = () => {
 	return (
-		<div className="fixed inset-0 z-0 pointer-events-none opacity-75">
+		<div className="fixed inset-0 z-0 pointer-events-none opacity-10">
 			<svg className="absolute top-0 w-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
 				<defs>
 					<linearGradient id="topGradient" x1="0" x2="0" y1="0" y2="1">

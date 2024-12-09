@@ -17,7 +17,7 @@ export const Header = () => {
 						loading="lazy"
 						fetchPriority="high"
 					/>
-					<span className="text-2xl tracking-wide font-medium">Novabyte</span>
+					<span className="text-2xl font-bold">Novabyte</span>
 				</a>
 			</header>
 		</>

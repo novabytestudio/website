@@ -1,49 +1,20 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, LinkedinIcon, GithubIcon, PhoneIcon, MapPin, InstagramIcon } from "lucide-react";
-import emailjs from "@emailjs/browser";
-import { env } from "@/src/lib/env";
 
 export const ContactAndCredits = () => {
-	const [formData, setFormData] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
-	const [isSending, setIsSending] = useState(false);
-	const [successMessage, setSuccessMessage] = useState("");
-	const [errorMessage, setErrorMessage] = useState("");
+	const [name, setName] = useState("");
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-		const { name, value } = e.target;
-		setFormData((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
-
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleWhatsAppRedirect = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		setIsSending(true);
-		setSuccessMessage("");
-		setErrorMessage("");
-
-		emailjs
-			.send(env.SERVICE_ID as string, env.TEMPLATE_ID as string, formData, env.PUBLIC_KEY as string)
-			.then(() => {
-				setSuccessMessage("Mensaje enviado con éxito. ¡Gracias por contactarnos!");
-				setFormData({ name: "", email: "", message: "" });
-			})
-			.catch(() => {
-				setErrorMessage("Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.");
-			})
-			.finally(() => {
-				setIsSending(false);
-			});
+		const phoneNumber = "+5491138334698";
+		const message = `Hola, mi nombre es ${name}. Me gustaría obtener más información sobre sus servicios.`;
+		const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+		window.open(whatsappUrl, "_blank");
 	};
 
 	return (
-		<section className="w-screen flex flex-col z-20 py-5 min-h-screen text-white">
+		<section className="w-screen flex flex-col z-20 py-5 min-h-screen bg-[#e8e8e8] text-[#2F3645]">
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
@@ -65,7 +36,7 @@ export const ContactAndCredits = () => {
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.6 }}
 					>
-						<form onSubmit={handleSubmit} className="space-y-6">
+						<form onSubmit={handleWhatsAppRedirect} className="space-y-6">
 							<div>
 								<label htmlFor="name" className="block text-sm font-medium mb-2">
 									Nombre
@@ -74,58 +45,27 @@ export const ContactAndCredits = () => {
 									type="text"
 									id="name"
 									name="name"
-									value={formData.name}
-									onChange={handleChange}
-									placeholder="Ingrese su nombre..."
+									value={name}
+									onChange={(e) => setName(e.target.value)}
+									placeholder="Ingresa tu nombre..."
 									required
-									className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
+									className="w-full px-3 py-2 bg-[#d0d0d0] border-2 border-[#2F3645] rounded-md focus:outline-none"
 								/>
-							</div>
-							<div>
-								<label htmlFor="email" className="block text-sm font-medium mb-2">
-									Email
-								</label>
-								<input
-									type="email"
-									id="email"
-									name="email"
-									value={formData.email}
-									onChange={handleChange}
-									placeholder="Ingrese su correo electrónico..."
-									required
-									className="w-full px-3 py-2 bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
-								/>
-							</div>
-							<div>
-								<label htmlFor="message" className="block text-sm font-medium mb-2">
-									Mensaje
-								</label>
-								<textarea
-									id="message"
-									name="message"
-									value={formData.message}
-									onChange={handleChange}
-									placeholder="Describa el motivo de su contacto..."
-									required
-									rows={4}
-									className="w-full px-3 py-2 resize-none bg-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400/60"
-								></textarea>
 							</div>
 							<motion.button
 								type="submit"
-								disabled={isSending}
-								className={`w-full ${
-									isSending ? "bg-blue-400/10 text-white/30" : "bg-blue-400/60 hover:bg-blue-400/80 text-white"
-								} font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center`}
-								whileHover={{ scale: isSending ? 1 : 1.025 }}
-								whileTap={{ scale: isSending ? 1 : 0.95 }}
+								className="w-[50%] mx-auto bg-[#2F3645] text-[#e8e8e8] hover:bg-[#2F3645]/80 font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center"
+								transition={{ ease: "easeInOut" }}
+								whileHover={{
+									scale: 1.02,
+									boxShadow: "5px 5px 0 rgba(47,54,69,0.3)",
+								}}
+								whileTap={{ scale: 0.98, boxShadow: "1px 1px 0 rgba(47,54,69,0.3)" }}
 							>
-								<Send className="mr-2 h-5 w-5" />
-								{isSending ? "Enviando..." : "Enviar Mensaje"}
+								<PhoneIcon className="mr-2 h-5 w-5" />
+								Enviar
 							</motion.button>
 						</form>
-						{successMessage && <p className="text-green-400 mt-4">{successMessage}</p>}
-						{errorMessage && <p className="text-red-400 mt-4">{errorMessage}</p>}
 					</motion.div>
 					<motion.div
 						className="w-full lg:w-1/2 px-4"
@@ -133,28 +73,28 @@ export const ContactAndCredits = () => {
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.6, delay: 0.3 }}
 					>
-						<div className="bg-gray-700 p-8 rounded-lg">
-							<h3 className="text-2xl text-indigo-400 font-semibold mb-4">Información de Contacto</h3>
+						<div className="bg-[#2F3645] text-[#e8e8e8] p-8 rounded-lg">
+							<h3 className="text-2xl text-[#e8e8e8] font-semibold mb-4">Información de Contacto</h3>
 							<p className="mb-4">¿Tienes alguna pregunta o quieres discutir un proyecto? No dudes en contactarnos.</p>
 							<ul className="flex flex-col space-y-2">
 								<li className="inline-flex items-center">
 									<Send className="h-4 w-4 mr-1.5" />
-									<span className="italic text-blue-400">novabytestudio.dev@gmail.com</span>
+									<span className="italic">novabytestudio.dev@gmail.com</span>
 								</li>
 								<li className="inline-flex items-center">
 									<PhoneIcon className="h-4 w-4 mr-1.5" />
-									<span className="italic text-blue-400">Próximamente...</span>
+									<span className="italic">Próximamente...</span>
 								</li>
 								<li className="inline-flex items-center">
 									<MapPin className="h-4 w-4 mr-1.5" />
-									<span className="italic text-blue-400">Buenos Aires, Argentina</span>
+									<span className="italic">Buenos Aires, Argentina</span>
 								</li>
 							</ul>
 						</div>
 					</motion.div>
 				</div>
 			</motion.div>
-			<footer className="border-t z-20 mt-20 py-8 border-gray-700">
+			<footer className="border-t z-20 mt-20 py-8 border-[#2F3645]">
 				<div className="container mx-auto px-4">
 					<div className="flex flex-col md:flex-row justify-between items-center">
 						<div className="w-full md:w-auto mb-4 md:mb-0 text-center md:text-left">
@@ -168,7 +108,7 @@ export const ContactAndCredits = () => {
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>
-								<LinkedinIcon className="h-6 w-6 hover:text-indigo-400 transition-colors" />
+								<LinkedinIcon className="h-6 w-6 hover:text-[#2F3645] transition-colors" />
 							</motion.a>
 							<motion.a
 								href="https://github.com/NovabyteStudio/"
@@ -177,7 +117,7 @@ export const ContactAndCredits = () => {
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>
-								<GithubIcon className="h-6 w-6 hover:text-indigo-400 transition-colors" />
+								<GithubIcon className="h-6 w-6 hover:text-[#2F3645] transition-colors" />
 							</motion.a>
 							<motion.a
 								href="https://www.instagram.com/novabyte.software/"
@@ -186,7 +126,7 @@ export const ContactAndCredits = () => {
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>
-								<InstagramIcon className="h-6 w-6 hover:text-indigo-400 transition-colors" />
+								<InstagramIcon className="h-6 w-6 hover:text-[#2F3645] transition-colors" />
 							</motion.a>
 						</div>
 					</div>

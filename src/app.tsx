@@ -95,7 +95,7 @@ const MainPage = () => {
 					{components.map((_, index) => (
 						<button
 							key={index}
-							className={`block w-3 h-3 my-2 rounded-full ${active === index ? "bg-blue-400/80" : "bg-gray-300/80"}`}
+							className={`block w-3 h-3 my-2 rounded-full ${active === index ? "bg-[#2F3645]" : "bg-gray-300"}`}
 							onClick={() => scrollToSection(index)}
 						/>
 					))}

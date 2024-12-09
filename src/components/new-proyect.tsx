@@ -5,7 +5,7 @@ export const NewProyect = () => {
 	return (
 		<>
 			<SVGBackground />
-			<div className="w-full min-h-screen z-40 text-white p-4 md:p-8">
+			<div className="w-full min-h-screen z-40  p-4 md:p-8">
 				<div className="max-w-4xl mx-auto">
 					<div className="bg-transparent rounded-xl overflow-hidden">
 						<div className="min-h-screen w-full">
@@ -18,7 +18,7 @@ export const NewProyect = () => {
 							/>
 						</div>
 					</div>
-					<p className="text-center text-sm text-gray-600 mt-4">
+					<p className="text-center text-sm text-[#1c1c1c] mt-4">
 						Si el formulario no carga correctamente, puedes{" "}
 						<a
 							href="https://forms.gle/NidRoAqgYsiQ3zrx7"

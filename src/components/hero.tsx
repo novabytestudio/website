@@ -1,9 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import { Code, Cpu, Globe } from "lucide-react";
-// Components \\
 import { Header } from "@/src/components/header";
 
 export const Hero = () => {
@@ -16,7 +17,7 @@ export const Hero = () => {
 	return (
 		<>
 			<Header />
-			<section className="w-full z-20 py-24 min-h-screen text-white flex items-center justify-center">
+			<section className="w-full z-20 py-24 min-h-screen flex items-center justify-center">
 				<div className="container z-20 mx-auto">
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
@@ -35,24 +36,24 @@ export const Hero = () => {
 								/>
 							)}
 						</h1>
-						<p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+						<p className="text-xl max-md:px-4 md:text-2xl max-w-3xl mx-auto">
 							Transformamos ideas en realidad digital.
 							<br /> Creamos soluciones de software innovadoras y escalables para impulsar tu negocio.
 						</p>
-						<div className="flex justify-center space-x-4">
+						<div className="flex mx-auto items-center justify-center space-x-4 max-[400px]:flex-col max-[400px]:gap-y-4">
 							<Link to="/crear">
 								<motion.button
-									whileHover={{ scale: 1.05 }}
-									whileTap={{ scale: 0.95 }}
-									className="bg-blue-400/60 hover:bg-blue-400/80 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+									whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
+									transition={{ ease: "easeInOut" }}
+									className="bg-[#2F3645] text-[#e8e8e8] font-bold py-3 px-6 rounded-lg drop-shadow-md"
 								>
 									Iniciar Proyecto
 								</motion.button>
 							</Link>
 							<motion.button
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.95 }}
-								className="bg-purple-400/60 hover:bg-purple-400/80 text-white font-bold py-3 px-6 rounded-lg transition duration-300"
+								whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
+								transition={{ ease: "easeInOut" }}
+								className="bg-[#d0d0d0] text-[#2F3645] font-bold py-3 px-6 rounded-lg drop-shadow-md"
 							>
 								Conocer Más
 							</motion.button>
@@ -65,19 +66,19 @@ export const Hero = () => {
 						className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
 					>
 						<div className="space-y-4">
-							<Code className="mx-auto h-12 w-12 text-blue-400" />
+							<Code className="mx-auto h-12 w-12 drop-shadow-md" />
 							<h3 className="text-xl font-semibold">Desarrollo a Medida</h3>
-							<p className="text-gray-400">Soluciones personalizadas que se adaptan perfectamente a tus necesidades.</p>
+							<p className="max-md:px-4">Soluciones personalizadas que se adaptan perfectamente a tus necesidades.</p>
 						</div>
 						<div className="space-y-4">
-							<Cpu className="mx-auto h-12 w-12 text-emerald-400" />
+							<Cpu className="mx-auto h-12 w-12 drop-shadow-md" />
 							<h3 className="text-xl font-semibold">Tecnología de Vanguardia</h3>
-							<p className="text-gray-400">Utilizamos las últimas tecnologías para crear productos innovadores.</p>
+							<p className="max-md:px-4">Utilizamos las últimas tecnologías para crear productos innovadores.</p>
 						</div>
 						<div className="space-y-4">
-							<Globe className="mx-auto h-12 w-12 text-indigo-400" />
+							<Globe className="mx-auto h-12 w-12 drop-shadow-md" />
 							<h3 className="text-xl font-semibold">Alcance Global</h3>
-							<p className="text-gray-400">Soluciones escalables diseñadas para un impacto mundial.</p>
+							<p className="max-md:px-4">Soluciones escalables diseñadas para un impacto mundial.</p>
 						</div>
 					</motion.div>
 				</div>
