@@ -21,27 +21,27 @@ export const NewProyect = () => {
 						</div>
 					</div>
 					<div className="w-full flex flex-col mx-auto justify-center">
-					<p className="text-center text-sm mt-4">
-						Si el formulario no carga correctamente, podes{" "}
-						<a
-							href="https://forms.gle/NidRoAqgYsiQ3zrx7"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-blue-400 hover:text-blue-500 transition-colors"
-						>
-							abrirlo en una nueva ventana
-						</a>
-						.
-					</p>
-					<Link to="/" className="mx-auto mt-8">
-								<motion.button
-									whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
-									transition={{ ease: "easeInOut" }}
-									className="bg-[#2F3645] text-[#e8e8e8] font-bold py-3 px-6 rounded-lg drop-shadow-md"
-								>
-									Volver al Inicio
-								</motion.button>
-							</Link>
+						<p className="text-center text-sm mt-4">
+							Si el formulario no carga correctamente, podes{" "}
+							<a
+								href="https://forms.gle/NidRoAqgYsiQ3zrx7"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-blue-400 hover:text-blue-500 transition-colors"
+							>
+								abrirlo en una nueva ventana
+							</a>
+							.
+						</p>
+						<Link to="/" className="mx-auto mt-8">
+							<motion.button
+								whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
+								transition={{ ease: "easeInOut" }}
+								className="bg-[#2F3645] text-[#e8e8e8] font-bold py-3 px-6 rounded-lg drop-shadow-md"
+							>
+								Volver al Inicio
+							</motion.button>
+						</Link>
 					</div>
 				</div>
 			</div>

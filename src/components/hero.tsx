@@ -25,7 +25,7 @@ export const Hero = () => {
 						transition={{ duration: 0.8 }}
 						className="text-center space-y-8"
 					>
-						<h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+						<h1 className="text-4xl md:text-6xl font-bold tracking-tight py-4">
 							{mounted && (
 								<Typewriter
 									options={{

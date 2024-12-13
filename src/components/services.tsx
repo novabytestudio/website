@@ -69,7 +69,7 @@ export const ServiceShowcase = () => {
 						{(showAllServices ? services : services.slice(0, 3)).map((service, index) => (
 							<motion.div
 								key={index}
-								className={`rounded-lg p-6 bg-gradient-to-br ${service.color} shadow-lg cursor-pointer text-[#e8e8e8]`}
+								className={`rounded-lg p-6 bg-gradient-to-br ${service.color} shadow-lg cursor-pointer text-[#e8e8e8] transition-all ease-in-out`}
 								initial={{ opacity: 0, y: 50 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.3, delay: index * 0.1 }}

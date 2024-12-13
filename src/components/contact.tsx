@@ -14,12 +14,12 @@ export const ContactAndCredits = () => {
 	};
 
 	return (
-		<section className="w-screen flex flex-col z-20 py-5 min-h-screen bg-[#e8e8e8] text-[#2F3645]">
+		<section className="relative flex flex-col w-screen min-h-screen text-[#2F3645]">
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.8 }}
-				className="container z-20 mx-auto px-4"
+				className="container z-20 mx-auto px-4 max-md:mb-32 max-sm:mb-36"
 			>
 				<motion.h2
 					className="text-3xl md:text-4xl font-bold py-10 text-center"
@@ -46,10 +46,14 @@ export const ContactAndCredits = () => {
 									id="name"
 									name="name"
 									value={name}
+									min={5}
+									max={15}
+									minLength={5}
+									maxLength={15}
 									onChange={(e) => setName(e.target.value)}
-									placeholder="Ingresa tu nombre..."
+									placeholder="Ingresá tu nombre..."
 									required
-									className="w-full px-3 py-2 bg-[#d0d0d0] border-2 border-[#2F3645] rounded-md focus:outline-none"
+									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg ring-1 hover:ring-2 ring-[#2F3645] transition-all ease-in-out rounded-sm focus:outline-none"
 								/>
 							</div>
 							<motion.button
@@ -94,7 +98,8 @@ export const ContactAndCredits = () => {
 					</motion.div>
 				</div>
 			</motion.div>
-			<footer className="border-t z-20 mt-20 py-8 border-[#2F3645]">
+
+			<footer className="absolute bottom-0 left-0 right-0 py-8 bg-[#2F3645] text-[#e8e8e8]">
 				<div className="container mx-auto px-4">
 					<div className="flex flex-col md:flex-row justify-between items-center">
 						<div className="w-full md:w-auto mb-4 md:mb-0 text-center md:text-left">
@@ -108,7 +113,7 @@ export const ContactAndCredits = () => {
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>
-								<LinkedinIcon className="h-6 w-6 hover:text-[#2F3645] transition-colors" />
+								<LinkedinIcon className="h-6 w-6 transition-all ease-in-out" />
 							</motion.a>
 							<motion.a
 								href="https://github.com/NovabyteStudio/"
@@ -117,7 +122,7 @@ export const ContactAndCredits = () => {
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>
-								<GithubIcon className="h-6 w-6 hover:text-[#2F3645] transition-colors" />
+								<GithubIcon className="h-6 w-6 transition-all ease-in-out" />
 							</motion.a>
 							<motion.a
 								href="https://www.instagram.com/novabyte.software/"
@@ -126,7 +131,7 @@ export const ContactAndCredits = () => {
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>
-								<InstagramIcon className="h-6 w-6 hover:text-[#2F3645] transition-colors" />
+								<InstagramIcon className="h-6 w-6 transition-all ease-in-out" />
 							</motion.a>
 						</div>
 					</div>

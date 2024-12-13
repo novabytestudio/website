@@ -60,7 +60,7 @@ export const DevelopmentProcess = () => {
 					{steps.map((step, index) => (
 						<motion.div key={index} className="flex flex-col items-center text-center" variants={itemVariants}>
 							<motion.div
-								className="w-20 h-20 p-4 bg-[#2F3645] rounded-full flex items-center justify-center mb-4 shadow-lg"
+								className="w-20 h-20 p-4 bg-[#2F3645] rounded-full flex items-center justify-center mb-4 shadow-lg transition-all ease-in-out"
 								whileHover={{
 									scale: 1.05,
 									boxShadow: "5px 5px 0 rgba(47,54,69,0.3)",
@@ -70,9 +70,7 @@ export const DevelopmentProcess = () => {
 							>
 								{React.createElement(step.icon, { size: 32, className: "text-[#e8e8e8]" })}
 							</motion.div>
-							<motion.h3 className="text-xl font-semibold mb-2" whileHover={{ scale: 1.05, color: "#2F3645" }}>
-								{step.title}
-							</motion.h3>
+							<motion.h3 className="text-xl font-semibold mb-2">{step.title}</motion.h3>
 							<p className="text-[#2F3645]">{step.description}</p>
 						</motion.div>
 					))}
