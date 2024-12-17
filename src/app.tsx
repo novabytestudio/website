@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { getCalApi } from "@calcom/embed-react";
 
 // Components
 import { Hero } from "@/src/components/hero";
@@ -48,6 +49,23 @@ const MainPage = () => {
 	useEffect(() => {
 		if ("scrollRestoration" in window.history) {
 			window.history.scrollRestoration = "manual";
+
+			(async function () {
+				const cal = await getCalApi({ namespace: "30min" });
+				cal("floatingButton", {
+					calLink: "novabytestudio/30min",
+					config: { layout: "month_view", theme: "dark" },
+					buttonText: "¡Coordiná una reunión!",
+					buttonColor: "#2F3645",
+					buttonTextColor: "#e8e8e8",
+				});
+				cal("ui", {
+					theme: "dark",
+					cssVarsPerTheme: { light: { "cal-brand": "#2F3645" }, dark: { "cal-brand": "#e8e8e8" } },
+					hideEventTypeDetails: false,
+					layout: "month_view",
+				});
+			})();
 		}
 
 		const handleScroll = () => {
