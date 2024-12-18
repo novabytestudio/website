@@ -14,7 +14,7 @@ export const ContactAndCredits = () => {
 	};
 
 	return (
-		<section className="relative flex flex-col w-screen min-h-screen text-[#2F3645]">
+		<section id="contact" className="relative flex flex-col w-screen min-h-screen text-[#2F3645]">
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
@@ -99,9 +99,9 @@ export const ContactAndCredits = () => {
 				</div>
 			</motion.div>
 
-			<footer className="absolute bottom-0 left-0 right-0 py-8 bg-[#2F3645] text-[#e8e8e8]">
+			<footer className="absolute bottom-0 left-0 right-0 py-5 bg-[#2F3645] text-[#e8e8e8]">
 				<div className="container mx-auto px-4">
-					<div className="flex flex-col md:flex-row justify-between items-center">
+					<div className="flex flex-col space-y-5 justify-center items-center">
 						<div className="w-full md:w-auto mb-4 md:mb-0 text-center md:text-left">
 							<p className="text-sm">&copy; 2024 Novabyte Studio. Todos los derechos reservados.</p>
 						</div>

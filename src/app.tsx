@@ -7,6 +7,7 @@ import { getCalApi } from "@calcom/embed-react";
 // Components
 import { Hero } from "@/src/components/hero";
 import { ServiceShowcase } from "@/src/components/services";
+import { SubscriptionPlans } from "@/src/components/subscriptions";
 import { DevelopmentProcess } from "@/src/components/development";
 import { ClientTestimonials } from "@/src/components/testimonials";
 import { ContactAndCredits } from "@/src/components/contact";
@@ -55,7 +56,7 @@ const MainPage = () => {
 				cal("floatingButton", {
 					calLink: "novabytestudio/30min",
 					config: { layout: "month_view", theme: "dark" },
-					buttonText: "¡Coordiná una reunión!",
+					buttonText: "Coordinar reunión",
 					buttonColor: "#2F3645",
 					buttonTextColor: "#e8e8e8",
 				});
@@ -92,7 +93,14 @@ const MainPage = () => {
 		sectionsRef.current[index]?.scrollIntoView({ behavior: "smooth" });
 	};
 
-	const components = [Hero, ServiceShowcase, DevelopmentProcess, ClientTestimonials, ContactAndCredits];
+	const components = [
+		Hero,
+		ServiceShowcase,
+		SubscriptionPlans,
+		DevelopmentProcess,
+		ClientTestimonials,
+		ContactAndCredits,
+	];
 
 	return (
 		<>

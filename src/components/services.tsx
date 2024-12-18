@@ -99,7 +99,7 @@ const services: Service[] = [
 ];
 
 export const ServiceShowcase = () => {
-	const [showAllServices, setShowAllServices] = useState(false);
+	const [showAllServices, setShowAllServices] = useState(true);
 	const [selectedService, setSelectedService] = useState<Service | null>(null);
 
 	const handleServiceClick = (service: Service) => {
