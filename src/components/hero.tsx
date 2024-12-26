@@ -48,7 +48,7 @@ export const Hero = () => {
 							<br /> Creamos soluciones de software innovadoras y escalables para impulsar tu negocio.
 						</p>
 						<div className="flex mx-auto items-center justify-center space-x-4 max-[400px]:flex-col max-[400px]:gap-y-4">
-							<Link to="/crear">
+							<Link to="/">
 								<motion.button
 									whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
 									transition={{ ease: "easeInOut" }}

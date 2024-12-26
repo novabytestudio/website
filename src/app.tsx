@@ -11,7 +11,6 @@ import { SubscriptionPlans } from "@/src/components/subscriptions";
 import { DevelopmentProcess } from "@/src/components/development";
 import { ClientTestimonials } from "@/src/components/testimonials";
 import { ContactAndCredits } from "@/src/components/contact";
-import { NewProject } from "@/src/components/new-project";
 import { SVGBackground } from "@/src/components/svg-background";
 
 const AnimatedSection = ({ children }: { children: React.ReactNode }) => {
@@ -136,7 +135,6 @@ export const App = () => {
 		<Router>
 			<Routes>
 				<Route path="/" element={<MainPage />} />
-				<Route path="/crear" element={<NewProject />} />
 			</Routes>
 		</Router>
 	);

@@ -7,7 +7,7 @@ export const ContactAndCredits = () => {
 
 	const handleWhatsAppRedirect = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		const phoneNumber = "+5491138334698";
+		const phoneNumber = "";
 		const message = `Hola, mi nombre es ${name}. Me gustaría obtener más información sobre sus servicios.`;
 		const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 		window.open(whatsappUrl, "_blank");
@@ -53,7 +53,7 @@ export const ContactAndCredits = () => {
 									onChange={(e) => setName(e.target.value)}
 									placeholder="Ingresá tu nombre..."
 									required
-									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg ring-1 hover:ring-2 ring-[#2F3645] transition-all ease-in-out rounded-sm focus:outline-none"
+									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg ring-1 hover:ring-2 ring-[#2F3645] transition-all ease-in-out rounded-md focus:outline-none"
 								/>
 							</div>
 							<motion.button

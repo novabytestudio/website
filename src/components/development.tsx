@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Users, FileSearch, Code, TestTube, Rocket, Headphones, RefreshCw, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Users, FileSearch, Code, TestTube, Rocket, Headphones, RefreshCw, Zap, Send } from 'lucide-react';
 
 interface Step {
 	icon: React.ElementType;
@@ -100,6 +99,17 @@ export const DevelopmentProcess = () => {
 				"Estrategias de caché y optimización de bases de datos",
 			],
 		},
+		{
+			icon: Send,
+			title: "Lanzamiento Final",
+			description: "Llevamos tu solución al mercado y aseguramos su éxito.",
+			details: [
+				"Preparación de materiales de marketing y comunicación",
+				"Coordinación con equipos de ventas y atención al cliente",
+				"Lanzamiento oficial y campaña de promoción",
+				"Monitoreo de métricas de adopción y satisfacción del usuario",
+			],
+		},
 	];
 
 	const containerVariants = {
@@ -175,27 +185,8 @@ export const DevelopmentProcess = () => {
 						</motion.div>
 					))}
 				</motion.div>
-				<motion.div
-					className="mt-16 text-center"
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6, delay: 1.2 }}
-				>
-					<Link to="/crear">
-						<motion.a
-							className="bg-[#2F3645] text-[#e8e8e8] font-bold py-3 px-8 rounded-lg inline-block transition duration-300"
-							whileHover={{
-								scale: 1.02,
-								boxShadow: "5px 5px 0 rgba(47,54,69,0.3)",
-							}}
-							transition={{ ease: "easeInOut" }}
-							whileTap={{ scale: 0.98, boxShadow: "1px 1px 0 rgba(47,54,69,0.3)" }}
-						>
-							Inicia tu Proceso
-						</motion.a>
-					</Link>
-				</motion.div>
 			</motion.div>
 		</section>
 	);
 };
+

@@ -59,7 +59,7 @@
 
 	::selection,
 	::-moz-selection {
-		@apply bg-purple-400/60;
+		@apply bg-[#1b1b1b]/20;
 	}
 
 	// Firefox => https://bugzilla.mozilla.org/show_bug.cgi?id=1432935
@@ -74,7 +74,7 @@
 	}
 
 	::-webkit-scrollbar-thumb {
-		@apply bg-blue-400;
+		@apply bg-[#1b1b1b]/40;
 	}
 
 	cal-floating-button{
