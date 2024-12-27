@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, LinkedinIcon, GithubIcon, PhoneIcon, MapPin, InstagramIcon } from "lucide-react";
+import { LinkedinIcon, GithubIcon, PhoneIcon, MapPin, InstagramIcon, MailboxIcon, SendIcon } from "lucide-react";
 
 export const ContactAndCredits = () => {
 	const [name, setName] = useState("");
@@ -58,7 +58,7 @@ export const ContactAndCredits = () => {
 							</div>
 							<motion.button
 								type="submit"
-								className="w-[50%] mx-auto bg-[#2F3645] text-[#e8e8e8] hover:bg-[#2F3645]/80 font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center"
+								className="w-[50%] gap-x-2 mx-auto bg-[#2F3645] text-[#e8e8e8] hover:bg-[#2F3645]/80 font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center"
 								transition={{ ease: "easeInOut" }}
 								whileHover={{
 									scale: 1.02,
@@ -66,7 +66,7 @@ export const ContactAndCredits = () => {
 								}}
 								whileTap={{ scale: 0.98, boxShadow: "1px 1px 0 rgba(47,54,69,0.3)" }}
 							>
-								<PhoneIcon className="mr-2 h-5 w-5" />
+								<SendIcon className="mt-0.5 h-5 w-5" />
 								Enviar
 							</motion.button>
 						</form>
@@ -82,7 +82,7 @@ export const ContactAndCredits = () => {
 							<p className="mb-4">¿Tienes alguna pregunta o quieres discutir un proyecto? No dudes en contactarnos.</p>
 							<ul className="flex flex-col space-y-2">
 								<li className="inline-flex items-center">
-									<Send className="h-4 w-4 mr-1.5" />
+									<MailboxIcon className="h-4 w-4 mr-1.5" />
 									<span className="italic">novabytestudio.dev@gmail.com</span>
 								</li>
 								<li className="inline-flex items-center">

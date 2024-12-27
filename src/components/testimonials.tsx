@@ -23,7 +23,7 @@ export const ClientTestimonials = () => {
 	const currentTestimonials = testimonials.slice(currentIndex, currentIndex + 3);
 
 	return (
-		<section className="w-full z-20 py-5 min-h-screen bg-[#e8e8e8] text-[#2F3645] flex items-center justify-center">
+		<section className="w-full z-20 py-5 min-h-screen text-[#2F3645] flex items-center justify-center">
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export const ClientTestimonials = () => {
 									</div>
 									<p className="text-[#e8e8e8] py-4">"{testimonial.testimonial}"</p>
 									<div className="font-semibold">
-										{testimonial.name} {"de"} <span className="text-[#e8e8e8]">{testimonial.company}</span>
+										{testimonial.name} {/*} {"de"} */} <span className="text-[#e8e8e8]">{testimonial.company}</span>
 									</div>
 								</div>
 							</motion.div>

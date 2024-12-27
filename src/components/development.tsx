@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Users, FileSearch, Code, TestTube, Rocket, Headphones, RefreshCw, Zap, Send } from 'lucide-react';
+import { Users, FileSearch, Code, TestTube, Rocket, Headphones, RefreshCw, Zap, Send } from "lucide-react";
 
 interface Step {
 	icon: React.ElementType;
@@ -135,7 +135,7 @@ export const DevelopmentProcess = () => {
 	};
 
 	return (
-		<section className="w-full z-20 py-24 bg-[#e8e8e8] text-[#2F3645]">
+		<section className="w-full z-20 py-24 text-[#2F3645]">
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
@@ -189,4 +189,3 @@ export const DevelopmentProcess = () => {
 		</section>
 	);
 };
-

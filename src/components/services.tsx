@@ -113,7 +113,7 @@ export const ServiceShowcase = () => {
 	return (
 		<section
 			id="services"
-			className="w-full z-20 py-24 min-h-screen bg-[#e8e8e8] text-[#2F3645] flex items-center justify-center px-4"
+			className="w-full z-20 py-24 min-h-screen text-[#2F3645] flex items-center justify-center px-4"
 		>
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}

@@ -1,10 +1,8 @@
-"use client";
-
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import { motion } from "framer-motion";
 import { Code, Cpu, Globe } from "lucide-react";
+// Components \\
 import { Header } from "@/src/components/header";
 
 export const Hero = () => {
@@ -18,6 +16,13 @@ export const Hero = () => {
 		const subscriptionSection = document.getElementById("subscription-plans");
 		if (subscriptionSection) {
 			subscriptionSection.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+
+	const scrollToContact = () => {
+		const contactSection = document.getElementById("contact");
+		if (contactSection) {
+			contactSection.scrollIntoView({ behavior: "smooth" });
 		}
 	};
 
@@ -48,15 +53,14 @@ export const Hero = () => {
 							<br /> Creamos soluciones de software innovadoras y escalables para impulsar tu negocio.
 						</p>
 						<div className="flex mx-auto items-center justify-center space-x-4 max-[400px]:flex-col max-[400px]:gap-y-4">
-							<Link to="/">
-								<motion.button
-									whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
-									transition={{ ease: "easeInOut" }}
-									className="bg-[#2F3645] text-[#e8e8e8] font-bold py-3 px-6 rounded-lg drop-shadow-md"
-								>
-									Iniciar Proyecto
-								</motion.button>
-							</Link>
+							<motion.button
+								onClick={scrollToContact}
+								whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
+								transition={{ ease: "easeInOut" }}
+								className="bg-[#2F3645] text-[#e8e8e8] font-bold py-3 px-6 rounded-lg drop-shadow-md"
+							>
+								Iniciar Proyecto
+							</motion.button>
 							<motion.button
 								whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
 								transition={{ ease: "easeInOut" }}
