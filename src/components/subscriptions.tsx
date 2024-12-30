@@ -101,7 +101,7 @@ export const SubscriptionPlans = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.2 }}
 				>
-					Elige el plan que mejor se adapte a tus necesidades. Todos nuestros planes incluyen soporte técnico y pueden
+					Elegí el plan que mejor se adapte a tus necesidades. Todos nuestros planes incluyen mantenimiento y pueden
 					personalizarse según tus requerimientos.
 				</motion.p>
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">

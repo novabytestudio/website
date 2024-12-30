@@ -27,7 +27,7 @@ export const ContactAndCredits = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					Contactanos
+					Contactános
 				</motion.h2>
 				<div className="flex flex-wrap -mx-4 mb-12">
 					<motion.div
@@ -79,7 +79,7 @@ export const ContactAndCredits = () => {
 					>
 						<div className="bg-[#2F3645] text-[#e8e8e8] p-8 rounded-lg">
 							<h3 className="text-2xl text-[#e8e8e8] font-semibold mb-4">Información de Contacto</h3>
-							<p className="mb-4">¿Tienes alguna pregunta o quieres discutir un proyecto? No dudes en contactarnos.</p>
+							<p className="mb-4">¿Tenés alguna pregunta o querés discutir un proyecto? <br/>¡No dudes en contactarnos!</p>
 							<ul className="flex flex-col space-y-2">
 								<li className="inline-flex items-center">
 									<MailboxIcon className="h-4 w-4 mr-1.5" />

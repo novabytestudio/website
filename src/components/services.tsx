@@ -129,6 +129,14 @@ export const ServiceShowcase = () => {
 				>
 					Servicios Destacados
 				</motion.h2>
+				<motion.p
+					className="text-center text-lg mb-12 max-w-2xl mx-auto"
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6, delay: 0.2 }}
+				>
+					Un desglose detallado de los servicios que podemos ofrecerte, diseñados para cubrir tus necesidades de manera personalizadaz. Desde soluciones prácticas hasta estrategias innovadoras.
+				</motion.p>
 				<AnimatePresence>
 					<motion.div
 						className="grid grid-cols-1 md:grid-cols-3 gap-8"
