@@ -135,7 +135,8 @@ export const ServiceShowcase = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.2 }}
 				>
-					Un desglose detallado de los servicios que podemos ofrecerte, diseñados para cubrir tus necesidades de manera personalizadaz. Desde soluciones prácticas hasta estrategias innovadoras.
+					Un desglose detallado de los servicios que podemos ofrecerte, diseñados para cubrir tus necesidades de manera
+					personalizadaz. Desde soluciones prácticas hasta estrategias innovadoras.
 				</motion.p>
 				<AnimatePresence>
 					<motion.div

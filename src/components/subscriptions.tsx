@@ -14,8 +14,8 @@ interface Plan {
 
 const plans: Plan[] = [
 	{
-		name: "Plan Inicial",
-		price: "$749",
+		name: "Plan Emprendedor",
+		price: "$499*",
 		paymentType: "Pago único",
 		icon: CreditCard,
 		description: "Ideal para emprendedores que buscan comenzar con una solución básica y personalizable.",
@@ -23,10 +23,10 @@ const plans: Plan[] = [
 			"Landing page personalizada",
 			"Diseño responsive",
 			"Formulario de contacto",
-			"Integración con WhatsApp",
-			"Hosting por 1 año",
+			"Integración con WhatsApp / Telegram",
+			"Hosting incluido",
 			"Dominio por 1 año",
-			"3 meses de mantenimiento básico",
+			"Mantenimiento básico del sitio web",
 		],
 		notIncluded: [
 			"Sistema de Gestión Empresarial",
@@ -37,7 +37,7 @@ const plans: Plan[] = [
 	},
 	{
 		name: "Plan Business",
-		price: "$299",
+		price: "$149",
 		paymentType: "Mensual",
 		icon: CalendarClock,
 		description: "Perfecto para pequeñas y medianas empresas que necesitan una solución completa.",

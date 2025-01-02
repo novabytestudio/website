@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { LinkedinIcon, GithubIcon, PhoneIcon, MapPin, InstagramIcon, MailboxIcon, SendIcon } from "lucide-react";
+import {
+	LinkedinIcon,
+	GithubIcon,
+	PhoneIcon,
+	MapPin,
+	InstagramIcon,
+	MailboxIcon,
+	SendIcon,
+	TwitterIcon,
+	GitlabIcon,
+} from "lucide-react";
 
 export const ContactAndCredits = () => {
 	const [name, setName] = useState("");
@@ -79,11 +89,16 @@ export const ContactAndCredits = () => {
 					>
 						<div className="bg-[#2F3645] text-[#e8e8e8] p-8 rounded-lg">
 							<h3 className="text-2xl text-[#e8e8e8] font-semibold mb-4">Información de Contacto</h3>
-							<p className="mb-4">¿Tenés alguna pregunta o querés discutir un proyecto? <br/>¡No dudes en contactarnos!</p>
+							<p className="mb-4">
+								¿Tenés alguna pregunta o querés discutir un proyecto? <br />
+								¡No dudes en contactarnos!
+							</p>
 							<ul className="flex flex-col space-y-2">
 								<li className="inline-flex items-center">
 									<MailboxIcon className="h-4 w-4 mr-1.5" />
-									<span className="italic">novabytestudio.dev@gmail.com</span>
+									<span className="italic">
+										<a href="mailto:novabytestudio.dev@gmail.com">novabytestudio.dev@gmail.com</a>
+									</span>
 								</li>
 								<li className="inline-flex items-center">
 									<PhoneIcon className="h-4 w-4 mr-1.5" />
@@ -102,10 +117,16 @@ export const ContactAndCredits = () => {
 			<footer className="absolute bottom-0 left-0 right-0 py-5 bg-[#2F3645] text-[#e8e8e8]">
 				<div className="container mx-auto px-4">
 					<div className="flex flex-col space-y-5 justify-center items-center">
-						<div className="w-full md:w-auto mb-4 md:mb-0 text-center md:text-left">
-							<p className="text-sm">&copy; 2025 Novabyte Studio. Todos los derechos reservados.</p>
-						</div>
 						<div className="w-full md:w-auto flex justify-center md:justify-end space-x-4">
+							<motion.a
+								href="https://gitlab.com/groups/novabytestudio"
+								target="_blank"
+								rel="noopener noreferrer"
+								whileHover={{ scale: 1.1 }}
+								whileTap={{ scale: 0.9 }}
+							>
+								<GitlabIcon className="h-6 w-6 transition-all ease-in-out" />
+							</motion.a>
 							<motion.a
 								href="https://www.linkedin.com/company/103792680/"
 								target="_blank"
@@ -133,6 +154,18 @@ export const ContactAndCredits = () => {
 							>
 								<InstagramIcon className="h-6 w-6 transition-all ease-in-out" />
 							</motion.a>
+							<motion.a
+								href="https://x.com/novabytestudio"
+								target="_blank"
+								rel="noopener noreferrer"
+								whileHover={{ scale: 1.1 }}
+								whileTap={{ scale: 0.9 }}
+							>
+								<TwitterIcon className="h-6 w-6 transition-all ease-in-out" />
+							</motion.a>
+						</div>
+						<div className="w-full md:w-auto mb-4 md:mb-0 text-center md:text-left">
+							<p className="text-sm">&copy; 2025 Novabyte Studio. Todos los derechos reservados.</p>
 						</div>
 					</div>
 				</div>
