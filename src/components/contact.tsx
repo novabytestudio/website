@@ -103,7 +103,7 @@ export const ContactAndCredits = () => {
 				<div className="container mx-auto px-4">
 					<div className="flex flex-col space-y-5 justify-center items-center">
 						<div className="w-full md:w-auto mb-4 md:mb-0 text-center md:text-left">
-							<p className="text-sm">&copy; 2024 Novabyte Studio. Todos los derechos reservados.</p>
+							<p className="text-sm">&copy; 2025 Novabyte Studio. Todos los derechos reservados.</p>
 						</div>
 						<div className="w-full md:w-auto flex justify-center md:justify-end space-x-4">
 							<motion.a
