@@ -12,17 +12,14 @@ export const Hero = () => {
 		setMounted(true);
 	}, []);
 
-	const scrollToSubscriptions = () => {
-		const subscriptionSection = document.getElementById("subscription-plans");
-		if (subscriptionSection) {
-			subscriptionSection.scrollIntoView({ behavior: "smooth" });
-		}
-	};
-
-	const scrollToContact = () => {
-		const contactSection = document.getElementById("contact");
-		if (contactSection) {
-			contactSection.scrollIntoView({ behavior: "smooth" });
+	const smoothScroll = (id: string) => {
+		const section = document.getElementById(id);
+		if (section) {
+			const offsetTop = section.getBoundingClientRect().top + window.scrollY;
+			window.scrollTo({
+				top: offsetTop - 20,
+				behavior: "smooth",
+			});
 		}
 	};
 
@@ -41,7 +38,13 @@ export const Hero = () => {
 							{mounted && (
 								<Typewriter
 									options={{
-										strings: ["Innovación Digital", "Soluciones Tecnológicas", "Desarrollo de Software"],
+										strings: [
+											"{ Innovación Digital }",
+											"< Soluciones Tecnológicas />",
+											"( Desarrollo de Software )",
+											"[ Diseño + Funcionalidad ]",
+											"~ Transformando Ideas en Realidad ~",
+										],
 										autoStart: true,
 										loop: true,
 									}}
@@ -54,7 +57,7 @@ export const Hero = () => {
 						</p>
 						<div className="flex mx-auto items-center justify-center space-x-4 max-[400px]:flex-col max-[400px]:gap-y-4">
 							<motion.button
-								onClick={scrollToContact}
+								onClick={() => smoothScroll("contact")}
 								whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
 								transition={{ ease: "easeInOut" }}
 								className="bg-[#2F3645] text-[#e8e8e8] font-bold py-3 px-6 rounded-lg drop-shadow-md"
@@ -65,7 +68,7 @@ export const Hero = () => {
 								whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
 								transition={{ ease: "easeInOut" }}
 								className="bg-[#d0d0d0] text-[#2F3645] font-bold py-3 px-6 rounded-lg drop-shadow-md"
-								onClick={scrollToSubscriptions}
+								onClick={() => smoothScroll("subscription-plans")}
 							>
 								Conocer Más
 							</motion.button>

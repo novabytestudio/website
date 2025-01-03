@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Check, X, CreditCard, CalendarClock } from "lucide-react";
+import { Check, X, CalendarSyncIcon, Building2Icon, UserRoundIcon } from "lucide-react";
 
 interface Plan {
 	name: string;
@@ -14,10 +14,10 @@ interface Plan {
 
 const plans: Plan[] = [
 	{
-		name: "Plan Emprendedor",
+		name: "Plan Entrepreneur",
 		price: "$499*",
 		paymentType: "Pago único",
-		icon: CreditCard,
+		icon: UserRoundIcon,
 		description: "Ideal para emprendedores que buscan comenzar con una solución básica y personalizable.",
 		features: [
 			"Landing page personalizada",
@@ -39,7 +39,7 @@ const plans: Plan[] = [
 		name: "Plan Business",
 		price: "$149",
 		paymentType: "Mensual",
-		icon: CalendarClock,
+		icon: CalendarSyncIcon,
 		description: "Perfecto para pequeñas y medianas empresas que necesitan una solución completa.",
 		features: [
 			"Sistema de Gestión Empresarial (módulos básicos)",
@@ -62,7 +62,7 @@ const plans: Plan[] = [
 		name: "Plan Enterprise",
 		price: "Personalizado",
 		paymentType: "Contactar",
-		icon: CalendarClock,
+		icon: Building2Icon,
 		description: "Solución completa y personalizada para grandes empresas con necesidades específicas.",
 		features: [
 			"Sistema de Gestión Empresarial completo",
@@ -93,7 +93,7 @@ export const SubscriptionPlans = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					Planes y Precios
+					{"{"} Planes y Precios {"}"}
 				</motion.h2>
 				<motion.p
 					className="text-center text-lg mb-12 max-w-2xl mx-auto"
@@ -151,18 +151,6 @@ export const SubscriptionPlans = () => {
 										</>
 									)}
 								</div>
-							</div>
-							<div className="p-6 bg-[#2F3645] mt-auto">
-								<motion.button
-									className="w-full bg-[#e8e8e8] text-[#2F3645] font-bold py-3 px-4 rounded-lg transition duration-300"
-									whileHover={{
-										scale: 1.05,
-										boxShadow: "0px 0px 8px rgba(232,232,232,0.4)",
-									}}
-									whileTap={{ scale: 0.95 }}
-								>
-									{plan.paymentType === "Contactar" ? "Contactar" : "Seleccionar Plan"}
-								</motion.button>
 							</div>
 						</motion.div>
 					))}

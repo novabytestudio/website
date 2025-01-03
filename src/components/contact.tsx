@@ -18,7 +18,7 @@ export const ContactAndCredits = () => {
 	const handleWhatsAppRedirect = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const phoneNumber = "";
-		const message = `Hola, mi nombre es ${name}. Me gustaría obtener más información sobre sus servicios.`;
+		const message = `¡Hola! Mi nombre es ${name}. Me gustaría obtener más información sobre sus servicios.`;
 		const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 		window.open(whatsappUrl, "_blank");
 	};
@@ -37,7 +37,7 @@ export const ContactAndCredits = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					Contactános
+					{"{"} Contactános {"}"}
 				</motion.h2>
 				<div className="flex flex-wrap -mx-4 mb-12">
 					<motion.div

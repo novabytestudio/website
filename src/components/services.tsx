@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, BadgeInfoIcon, X } from "lucide-react";
 
 interface Service {
 	title: string;
@@ -127,7 +127,7 @@ export const ServiceShowcase = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					Servicios Destacados
+					{"{"} Servicios Destacados {"}"}
 				</motion.h2>
 				<motion.p
 					className="text-center text-lg mb-12 max-w-2xl mx-auto"
@@ -211,7 +211,7 @@ export const ServiceShowcase = () => {
 							onClick={(e) => e.stopPropagation()}
 						>
 							<div className="flex justify-between items-start mb-6">
-								<h3 className="text-2xl font-bold">{selectedService.title}</h3>
+								<h3 className="text-2xl font-bold"> {selectedService.title}</h3>
 								<button onClick={closeDetailView} className="text-[#2F3645] hover:text-[#1c1c1c]">
 									<X size={24} />
 								</button>
@@ -226,7 +226,7 @@ export const ServiceShowcase = () => {
 								))}
 							</ul>
 							<div className="mt-6">
-								<h4 className="text-xl font-semibold mb-4">Demostración:</h4>
+								{/* <h4 className="text-xl font-semibold mb-4">Demostración:</h4>
 								<div className="bg-[#2F3645] p-4 rounded-lg shadow-inner">
 									<img
 										src={selectedService.demoImage}
@@ -235,6 +235,9 @@ export const ServiceShowcase = () => {
 										height={300}
 										className="w-full h-auto rounded-lg shadow-md"
 									/>
+								</div> */}
+								<div className="inline-flex items-center gap-x-1 text-[14px]">
+									<BadgeInfoIcon className="size-5" /> Completamente personalizable según las necesidades del cliente.
 								</div>
 							</div>
 						</motion.div>

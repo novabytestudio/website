@@ -148,7 +148,7 @@ export const DevelopmentProcess = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					Nuestro Proceso de Desarrollo
+					{"{"} Nuestro Proceso de Desarrollo {"}"}
 				</motion.h2>
 				<motion.div className="relative" variants={containerVariants} initial="hidden" animate="visible">
 					{steps.map((step, index) => (

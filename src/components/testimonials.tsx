@@ -36,7 +36,7 @@ export const ClientTestimonials = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					Lo que Dicen Nuestros Clientes
+					{"{"} Lo que Dicen Nuestros Clientes {"}"}
 				</motion.h2>
 				<AnimatePresence mode="wait" custom={direction}>
 					<motion.div
