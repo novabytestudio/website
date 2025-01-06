@@ -59,7 +59,6 @@ export const ClientTestimonials = () => {
 										aria-label="User"
 										aria-labelledby="User"
 										loading="lazy"
-										fetchPriority="high"
 									/>
 									<div className="flex mb-2">
 										{[...Array(testimonial.rating)].map((_, i) => (

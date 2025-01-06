@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { env } from "@/src/lib/env";
 import {
 	LinkedinIcon,
 	GithubIcon,
@@ -12,15 +14,40 @@ import {
 	GitlabIcon,
 } from "lucide-react";
 
-export const ContactAndCredits = () => {
-	const [name, setName] = useState("");
+type Inputs = {
+	name: string;
+	email: string;
+	message: string;
+};
 
-	const handleWhatsAppRedirect = (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		const phoneNumber = "";
-		const message = `¡Hola! Mi nombre es ${name}. Me gustaría obtener más información sobre sus servicios.`;
-		const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-		window.open(whatsappUrl, "_blank");
+export const ContactAndCredits = (): JSX.Element => {
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors, isSubmitSuccessful },
+	} = useForm<Inputs>();
+
+	const onSubmit: SubmitHandler<Inputs> = (data) => {
+		emailjs
+			.send(
+				env.NEXT_PUBLIC_SERVICE_ID,
+				env.NEXT_PUBLIC_TEMPLATE_ID,
+				{
+					from_name: data.name,
+					from_email: data.email,
+					message: data.message,
+				},
+				env.NEXT_PUBLIC_PUBLIC_KEY,
+			)
+			.then(
+				() => {
+					reset();
+				},
+				(error) => {
+					console.error("Failed to send email:", error);
+				},
+			);
 	};
 
 	return (
@@ -46,7 +73,7 @@ export const ContactAndCredits = () => {
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.6 }}
 					>
-						<form onSubmit={handleWhatsAppRedirect} className="space-y-6">
+						<form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
 							<div>
 								<label htmlFor="name" className="block text-sm font-medium mb-2">
 									Nombre
@@ -54,21 +81,46 @@ export const ContactAndCredits = () => {
 								<input
 									type="text"
 									id="name"
-									name="name"
-									value={name}
-									min={5}
-									max={15}
-									minLength={5}
-									maxLength={15}
-									onChange={(e) => setName(e.target.value)}
+									{...register("name", { required: "Este campo es obligatorio." })}
 									placeholder="Ingresá tu nombre..."
-									required
 									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg ring-1 hover:ring-2 ring-[#2F3645] transition-all ease-in-out rounded-md focus:outline-none"
 								/>
+								{errors.name?.message && <p className="text-[#2F3645] mt-1 ml-2">{errors.name.message}</p>}
+							</div>
+							<div>
+								<label htmlFor="email" className="block text-sm font-medium mb-2">
+									Email
+								</label>
+								<input
+									type="email"
+									id="email"
+									{...register("email", {
+										required: "Este campo es obligatorio.",
+										pattern: {
+											value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+											message: "Ingresá un email válido.",
+										},
+									})}
+									placeholder="Ingresá tu email..."
+									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg ring-1 hover:ring-2 ring-[#2F3645] transition-all ease-in-out rounded-md focus:outline-none"
+								/>
+								{errors.email?.message && <p className="text-[#2F3645] mt-1 ml-2">{errors.email.message}</p>}
+							</div>
+							<div>
+								<label htmlFor="message" className="block text-sm font-medium mb-2">
+									Mensaje
+								</label>
+								<textarea
+									id="message"
+									{...register("message", { required: "Este campo es obligatorio." })}
+									placeholder="Escribí tu mensaje..."
+									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg resize-none ring-1 hover:ring-2 ring-[#2F3645] transition-all ease-in-out rounded-md focus:outline-none h-32"
+								/>
+								{errors.message?.message && <p className="text-[#2F3645] mt-1 ml-2">{errors.message.message}</p>}
 							</div>
 							<motion.button
 								type="submit"
-								className="w-[50%] gap-x-2 mx-auto bg-[#2F3645] text-[#e8e8e8] hover:bg-[#2F3645]/80 font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center"
+								className="w-full gap-x-2 mx-auto bg-[#2F3645] text-[#e8e8e8] hover:bg-[#2F3645]/80 font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center"
 								transition={{ ease: "easeInOut" }}
 								whileHover={{
 									scale: 1.02,
@@ -76,18 +128,20 @@ export const ContactAndCredits = () => {
 								}}
 								whileTap={{ scale: 0.98, boxShadow: "1px 1px 0 rgba(47,54,69,0.3)" }}
 							>
-								<SendIcon className="mt-0.5 h-5 w-5" />
+								<SendIcon className="mt-0.5 h-5 w-5 mr-2" />
 								Enviar
 							</motion.button>
+							{isSubmitSuccessful && <p className="text-[#2F3645] text-center mt-4">¡Mensaje enviado exitosamente!</p>}
 						</form>
 					</motion.div>
+
 					<motion.div
 						className="w-full lg:w-1/2 px-4"
 						initial={{ opacity: 0, x: 50 }}
 						animate={{ opacity: 1, x: 0 }}
 						transition={{ duration: 0.6, delay: 0.3 }}
 					>
-						<div className="bg-[#2F3645] text-[#e8e8e8] p-8 rounded-lg">
+						<div className="bg-[#2F3645] text-[#e8e8e8] p-8 rounded-lg h-fit">
 							<h3 className="text-2xl text-[#e8e8e8] font-semibold mb-4">Información de Contacto</h3>
 							<p className="mb-4">
 								¿Tenés alguna pregunta o querés discutir un proyecto? <br />
@@ -96,9 +150,7 @@ export const ContactAndCredits = () => {
 							<ul className="flex flex-col space-y-2">
 								<li className="inline-flex items-center">
 									<MailboxIcon className="h-4 w-4 mr-1.5" />
-									<span className="italic">
-										<a href="mailto:novabytestudio.dev@gmail.com">novabytestudio.dev@gmail.com</a>
-									</span>
+									<span className="italic">novabytestudio.dev@gmail.com</span>
 								</li>
 								<li className="inline-flex items-center">
 									<PhoneIcon className="h-4 w-4 mr-1.5" />
@@ -114,10 +166,10 @@ export const ContactAndCredits = () => {
 				</div>
 			</motion.div>
 
-			<footer className="absolute bottom-0 left-0 right-0 py-5 bg-[#2F3645] text-[#e8e8e8]">
+			<footer className="relative bottom-0 left-0 right-0 py-5 bg-[#2F3645] text-[#e8e8e8]">
 				<div className="container mx-auto px-4">
 					<div className="flex flex-col space-y-5 justify-center items-center">
-						<div className="w-full md:w-auto flex justify-center md:justify-end space-x-4">
+						<div className="w-full flex justify-center space-x-4">
 							<motion.a
 								href="https://gitlab.com/groups/novabytestudio"
 								target="_blank"
@@ -164,7 +216,7 @@ export const ContactAndCredits = () => {
 								<TwitterIcon className="h-6 w-6 transition-all ease-in-out" />
 							</motion.a>
 						</div>
-						<div className="w-full md:w-auto mb-4 md:mb-0 text-center md:text-left">
+						<div className="w-full text-center">
 							<p className="text-sm">&copy; 2025 Novabyte Studio. Todos los derechos reservados.</p>
 						</div>
 					</div>

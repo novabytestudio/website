@@ -7,7 +7,6 @@ import { getCalApi } from "@calcom/embed-react";
 // Components
 import { Hero } from "@/src/components/hero";
 import { ServiceShowcase } from "@/src/components/services";
-import { SubscriptionPlans } from "@/src/components/subscriptions";
 import { DevelopmentProcess } from "@/src/components/development";
 import { ClientTestimonials } from "@/src/components/testimonials";
 import { ContactAndCredits } from "@/src/components/contact";
@@ -99,14 +98,7 @@ const MainPage = () => {
 		sectionsRef.current[index]?.scrollIntoView({ behavior: "smooth" });
 	};
 
-	const components = [
-		Hero,
-		ServiceShowcase,
-		SubscriptionPlans,
-		DevelopmentProcess,
-		ClientTestimonials,
-		ContactAndCredits,
-	];
+	const components = [Hero, ServiceShowcase, DevelopmentProcess, ClientTestimonials, ContactAndCredits];
 
 	return (
 		<AnimatePresence mode="wait">

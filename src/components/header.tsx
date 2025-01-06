@@ -10,7 +10,6 @@ export const Header = () => {
 						aria-label="Novabyte"
 						aria-labelledby="Novabyte"
 						loading="lazy"
-						fetchPriority="high"
 					/>
 					<span className="text-2xl font-normal drop-shadow-md">Novabyte</span>
 				</div>
