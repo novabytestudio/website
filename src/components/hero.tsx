@@ -68,7 +68,7 @@ export const Hero = () => {
 								whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
 								transition={{ ease: "easeInOut" }}
 								className="bg-[#d0d0d0] text-[#2F3645] font-bold py-3 px-6 rounded-lg drop-shadow-md"
-								onClick={() => smoothScroll("subscription-plans")}
+								onClick={() => smoothScroll("dev-process")}
 							>
 								Conocer Más
 							</motion.button>

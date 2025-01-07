@@ -135,7 +135,7 @@ export const DevelopmentProcess = () => {
 	};
 
 	return (
-		<section className="w-full z-20 py-24 text-[#2F3645]">
+		<section id="dev-process" className="w-full z-20 py-24 text-[#2F3645]">
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
