@@ -47,6 +47,12 @@
 
 @layer base {
 	:root {
+		--toastify-color-progress-success: #2F3645;
+		--toastify-icon-color-success: #2F3645;
+		--toastify-color-progress-warning: #2F3645;
+		--toastify-icon-color-warning: #2F3645;
+		--toastify-color-progress-error: #2F3645;
+		--toastify-icon-color-error: #2F3645;
 		@apply bg-[#e8e8e8];
 		@apply text-[#2F3645];
 		@apply cursor-default;

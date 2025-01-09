@@ -2,6 +2,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { env } from "@/src/lib/env";
+import { toast } from "react-toastify";
 import {
 	LinkedinIcon,
 	GithubIcon,
@@ -25,7 +26,7 @@ export const ContactAndCredits = (): JSX.Element => {
 		register,
 		handleSubmit,
 		reset,
-		formState: { errors, isSubmitSuccessful },
+		formState: { errors },
 	} = useForm<Inputs>();
 
 	const onSubmit: SubmitHandler<Inputs> = (data) => {
@@ -43,9 +44,10 @@ export const ContactAndCredits = (): JSX.Element => {
 			.then(
 				() => {
 					reset();
+					toast.success("¡Gracias por contactarnos, te responderemos a la brevedad!");
 				},
-				(error) => {
-					console.error("Failed to send email:", error);
+				() => {
+					toast.error("Algo salió mal...");
 				},
 			);
 	};
@@ -83,7 +85,7 @@ export const ContactAndCredits = (): JSX.Element => {
 									id="name"
 									{...register("name", { required: "Este campo es obligatorio." })}
 									placeholder="Ingresá tu nombre..."
-									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg ring-1 hover:ring-2 ring-[#2F3645] transition-all ease-in-out rounded-md focus:outline-none"
+									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg ring-0 rounded-md focus:outline-none"
 								/>
 								{errors.name?.message && <p className="text-[#2F3645] mt-1 ml-2">{errors.name.message}</p>}
 							</div>
@@ -102,7 +104,7 @@ export const ContactAndCredits = (): JSX.Element => {
 										},
 									})}
 									placeholder="Ingresá tu email..."
-									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg ring-1 hover:ring-2 ring-[#2F3645] transition-all ease-in-out rounded-md focus:outline-none"
+									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg ring-0 rounded-md focus:outline-none"
 								/>
 								{errors.email?.message && <p className="text-[#2F3645] mt-1 ml-2">{errors.email.message}</p>}
 							</div>
@@ -114,7 +116,7 @@ export const ContactAndCredits = (): JSX.Element => {
 									id="message"
 									{...register("message", { required: "Este campo es obligatorio." })}
 									placeholder="Escribí tu mensaje..."
-									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg resize-none ring-1 hover:ring-2 ring-[#2F3645] transition-all ease-in-out rounded-md focus:outline-none h-32"
+									className="w-full px-3 py-2 bg-[#d0d0d0] drop-shadow-lg ring-0 rounded-md focus:outline-none resize-none h-32"
 								/>
 								{errors.message?.message && <p className="text-[#2F3645] mt-1 ml-2">{errors.message.message}</p>}
 							</div>
@@ -131,7 +133,6 @@ export const ContactAndCredits = (): JSX.Element => {
 								<SendIcon className="mt-0.5 h-5 w-5 mr-2" />
 								Enviar
 							</motion.button>
-							{isSubmitSuccessful && <p className="text-[#2F3645] text-center mt-4">¡Mensaje enviado exitosamente!</p>}
 						</form>
 					</motion.div>
 

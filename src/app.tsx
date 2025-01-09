@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { getCalApi } from "@calcom/embed-react";
+import { ToastContainer, Bounce } from "react-toastify";
 
 // Components
 import { Hero } from "@/src/components/hero";
@@ -101,37 +102,53 @@ const MainPage = () => {
 	const components = [Hero, ServiceShowcase, DevelopmentProcess, ClientTestimonials, ContactAndCredits];
 
 	return (
-		<AnimatePresence mode="wait">
-			{isLoading ? (
-				<Loader key="loader" onAnimationComplete={() => setIsLoading(false)} />
-			) : (
-				<motion.div key="content" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-					<SVGBackground />
-					<div className="min-h-screen overflow-y-auto">
-						{components.map((Component, index) => (
-							<section
-								ref={(el) => (sectionsRef.current[index] = el as HTMLDivElement)}
-								className="min-h-screen flex items-center justify-center"
-								key={index}
-							>
-								<AnimatedSection>
-									<Component />
-								</AnimatedSection>
-							</section>
-						))}
-						<nav className="fixed right-4 z-40 top-1/2 transform -translate-y-1/2">
-							{components.map((_, index) => (
-								<button
+		<>
+			<AnimatePresence mode="wait">
+				{isLoading ? (
+					<Loader key="loader" onAnimationComplete={() => setIsLoading(false)} />
+				) : (
+					<motion.div key="content" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+						<SVGBackground />
+						<div className="min-h-screen overflow-y-auto">
+							{components.map((Component, index) => (
+								<section
+									ref={(el) => (sectionsRef.current[index] = el as HTMLDivElement)}
+									className="min-h-screen flex items-center justify-center"
 									key={index}
-									className={`block w-3 h-3 my-2 rounded-full ${active === index ? "bg-[#2F3645]" : "bg-gray-300"}`}
-									onClick={() => scrollToSection(index)}
-								/>
+								>
+									<AnimatedSection>
+										<Component />
+									</AnimatedSection>
+								</section>
 							))}
-						</nav>
-					</div>
-				</motion.div>
-			)}
-		</AnimatePresence>
+							<nav className="fixed right-4 z-40 top-1/2 transform -translate-y-1/2">
+								{components.map((_, index) => (
+									<button
+										key={index}
+										className={`block w-3 h-3 my-2 rounded-full ${active === index ? "bg-[#2F3645]" : "bg-gray-300"}`}
+										onClick={() => scrollToSection(index)}
+									/>
+								))}
+							</nav>
+						</div>
+					</motion.div>
+				)}
+			</AnimatePresence>
+			<ToastContainer
+				className="font-sans max-md:flex max-md:justify-center max-md:[5%]"
+				position="top-center"
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={true}
+				closeOnClick
+				rtl={false}
+				pauseOnHover={false}
+				pauseOnFocusLoss={false}
+				draggable
+				theme="light"
+				transition={Bounce}
+			/>
+		</>
 	);
 };
 
