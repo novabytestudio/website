@@ -215,7 +215,9 @@ export const ContactAndCredits = (): JSX.Element => {
 							</motion.a>
 						</div>
 						<div className="w-full text-center">
-							<p className="text-sm">&copy; 2025 Novabyte Studio. Todos los derechos reservados.</p>
+							<p className="text-sm">
+								&copy; {new Date().getFullYear()} Novabyte Studio. Todos los derechos reservados.
+							</p>
 						</div>
 					</div>
 				</div>
