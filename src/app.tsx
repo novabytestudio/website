@@ -108,7 +108,7 @@ const MainPage = () => {
 					<Loader key="loader" onAnimationComplete={() => setIsLoading(false)} />
 				) : (
 					<motion.div key="content" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-						<SVGBackground />
+						{/* <SVGBackground /> */}
 						<div className="min-h-screen overflow-y-auto">
 							{components.map((Component, index) => (
 								<section

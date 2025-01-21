@@ -151,10 +151,6 @@ export const ContactAndCredits = (): JSX.Element => {
 									<span className="italic">novabytestudio.dev@gmail.com</span>
 								</li>
 								<li className="inline-flex items-center">
-									<PhoneIcon className="h-4 w-4 mr-1.5" />
-									<span className="italic">Próximamente...</span>
-								</li>
-								<li className="inline-flex items-center">
 									<MapPin className="h-4 w-4 mr-1.5" />
 									<span className="italic">Buenos Aires, Argentina</span>
 								</li>
