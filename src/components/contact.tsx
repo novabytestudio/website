@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import {
 	LinkedinIcon,
 	GithubIcon,
-	PhoneIcon,
 	MapPin,
 	InstagramIcon,
 	MailboxIcon,
