@@ -2,16 +2,6 @@ version: 2
 updates:
   - package-ecosystem: "npm" # Bun is not available.
     directory: "/"
+    target-branch: "main"
     schedule:
       interval: "weekly"
-      timezone: "America/Buenos_Aires"
-      time: "13:00"
-    commit-message:
-        prefix: "deps"
-    target-branch: "main"
-    ignore:
-      - dependency-name: "react"
-      - dependency-name: "react-dom"
-      - dependency-name: "@types/react"
-      - dependency-name: "@types/react-dom"
-    open-pull-requests-limit: 3
