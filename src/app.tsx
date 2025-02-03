@@ -112,7 +112,7 @@ const MainPage = () => {
 						<div className="min-h-screen overflow-y-auto">
 							{components.map((Component, index) => (
 								<section
-									ref={(el) => (sectionsRef.current[index] = el as HTMLDivElement)}
+									ref={(el) => (sectionsRef.current[index] = el as any)}
 									className="min-h-screen flex items-center justify-center"
 									key={index}
 								>
