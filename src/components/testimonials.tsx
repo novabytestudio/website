@@ -76,6 +76,9 @@ export const ClientTestimonials = () => {
 				</AnimatePresence>
 				<div className="mt-12 flex justify-center items-center space-x-4">
 					<motion.button
+						role="button"
+						aria-label="left"
+						aria-labelledby="left"
 						onClick={handlePrev}
 						className="bg-[#2F3645] text-[#e8e8e8] p-2 rounded-full"
 						whileHover={{ scale: 1.05, boxShadow: "3px 3px 0 rgba(47,54,69,0.3)" }}
@@ -85,6 +88,9 @@ export const ClientTestimonials = () => {
 						<ChevronLeft className="w-6 h-6" />
 					</motion.button>
 					<motion.button
+						role="button"
+						aria-label="right"
+						aria-labelledby="right"
 						onClick={handleNext}
 						className="bg-[#2F3645] text-[#e8e8e8] p-2 rounded-full"
 						whileHover={{ scale: 1.05, boxShadow: "3px 3px 0 rgba(47,54,69,0.3)" }}

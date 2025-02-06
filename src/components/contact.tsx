@@ -122,6 +122,9 @@ export const ContactAndCredits = (): JSX.Element => {
 							</div>
 							<motion.button
 								type="submit"
+								role="button"
+								aria-label="contact"
+								aria-labelledby="contact"
 								className="w-[50%] gap-x-2 mx-auto bg-[#2F3645] text-[#e8e8e8] hover:bg-[#2F3645]/80 font-bold py-3 px-4 rounded-md transition duration-300 flex items-center justify-center"
 								whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
 								whileTap={{ scale: 0.98, boxShadow: "1px 1px 0 rgba(47,54,69,0.3)" }}
@@ -168,6 +171,8 @@ export const ContactAndCredits = (): JSX.Element => {
 								href="https://gitlab.com/groups/novabytestudio"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="gitlab"
+								aria-labelledby="gitlab"
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>
@@ -177,6 +182,8 @@ export const ContactAndCredits = (): JSX.Element => {
 								href="https://www.linkedin.com/company/103792680/"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="linkedin"
+								aria-labelledby="linkedin"
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>
@@ -186,6 +193,8 @@ export const ContactAndCredits = (): JSX.Element => {
 								href="https://github.com/NovabyteStudio/"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="github"
+								aria-labelledby="github"
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>
@@ -195,6 +204,8 @@ export const ContactAndCredits = (): JSX.Element => {
 								href="https://www.instagram.com/novabyte.software/"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="instagram"
+								aria-labelledby="instagram"
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>
@@ -204,6 +215,8 @@ export const ContactAndCredits = (): JSX.Element => {
 								href="https://x.com/novabytestudio"
 								target="_blank"
 								rel="noopener noreferrer"
+								aria-label="twitter"
+								aria-labelledby="twitter"
 								whileHover={{ scale: 1.1 }}
 								whileTap={{ scale: 0.9 }}
 							>

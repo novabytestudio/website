@@ -57,6 +57,9 @@ export const Hero = () => {
 						</p>
 						<div className="flex mx-auto items-center justify-center space-x-4 max-[400px]:flex-col max-[400px]:gap-y-4">
 							<motion.button
+								role="button"
+								aria-label="start"
+								aria-labelledby="start"
 								onClick={() => smoothScroll("contact")}
 								whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
 								transition={{ ease: "easeInOut" }}
@@ -65,6 +68,9 @@ export const Hero = () => {
 								Iniciar Proyecto
 							</motion.button>
 							<motion.button
+								role="button"
+								aria-label="about"
+								aria-labelledby="about"
 								whileHover={{ scale: 1.02, boxShadow: "5px 5px 0 rgba(28,28,28,0.3)" }}
 								transition={{ ease: "easeInOut" }}
 								className="bg-[#d0d0d0] text-[#2F3645] font-bold py-3 px-6 rounded-lg drop-shadow-md"

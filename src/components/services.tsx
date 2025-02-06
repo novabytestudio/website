@@ -160,6 +160,9 @@ export const ServiceShowcase = () => {
 								</motion.h3>
 								<p className="mb-4">{service.description}</p>
 								<motion.button
+									role="button"
+									aria-label="known"
+									aria-labelledby="known"
 									onClick={() => handleServiceClick(service)}
 									className="inline-flex items-center text-[#e8e8e8] hover:underline"
 									whileHover={{ x: 5 }}
@@ -178,6 +181,9 @@ export const ServiceShowcase = () => {
 					transition={{ duration: 0.6, delay: 0.8 }}
 				>
 					<motion.button
+						role="button"
+						aria-label="services"
+						aria-labelledby="services"
 						className="bg-[#2F3645] text-[#e8e8e8] font-bold py-3 px-8 rounded-lg transition duration-300"
 						whileHover={{
 							scale: 1.02,
