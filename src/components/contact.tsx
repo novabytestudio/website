@@ -150,12 +150,12 @@ export const ContactAndCredits = (): JSX.Element => {
 							</p>
 							<ul className="flex flex-col space-y-2">
 								<li className="inline-flex items-center">
-									<MailboxIcon className="h-4 w-4 mr-1.5" />
-									<span className="italic">novabytestudio.dev@gmail.com</span>
+									<MailboxIcon className="h-4 w-4 mr-1.5 mt-0.5" />
+									<span>novabytestudio.dev@gmail.com</span>
 								</li>
 								<li className="inline-flex items-center">
 									<MapPin className="h-4 w-4 mr-1.5" />
-									<span className="italic">Buenos Aires, Argentina</span>
+									<span>Buenos Aires, Argentina</span>
 								</li>
 							</ul>
 						</div>

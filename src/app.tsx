@@ -78,7 +78,8 @@ const MainPage = () => {
 					cal("floatingButton", {
 						calLink: "novabytestudio/30min",
 						config: { layout: "month_view", theme: "dark" },
-						buttonText: "Coordinar reunión",
+						buttonText: "",
+						hideButtonIcon: false,
 						buttonColor: "#2F3645",
 						buttonTextColor: "#e8e8e8",
 					});
