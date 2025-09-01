@@ -41,7 +41,7 @@
 		"@tailwindcss/postcss": "^4.0.17",
 		"@types/react": "19.1.8",
 		"@types/react-dom": "19.1.6",
-		"@vitejs/plugin-react": "^4.3.4",
+		"@vitejs/plugin-react": "^5.0.2",
 		"globals": "^16.0.0",
 		"postcss": "^8.5.3",
 		"react-toastify": "^11.0.5",
