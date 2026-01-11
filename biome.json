@@ -1,51 +1,51 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.5/schema.json",
-  "files": {
-    "includes": ["app/**", "components/**", "hooks/**", "lib/**", "docs/**"]
-  },
-  "formatter": {
-    "enabled": true,
-    "formatWithErrors": false,
-    "indentStyle": "tab",
-    "indentWidth": 2,
-    "lineWidth": 120,
-    "attributePosition": "auto"
-  },
-  "linter": {
-    "enabled": false,
-    "rules": {
-      "recommended": true,
-      "correctness": {
-        "noUnusedImports": "warn",
-        "noUnusedVariables": "warn"
-      }
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "double",
-      "jsxQuoteStyle": "double",
-      "trailingCommas": "all",
-      "arrowParentheses": "always",
-      "bracketSpacing": true,
-      "bracketSameLine": false,
-      "attributePosition": "auto"
-    }
-  },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "off"
-      }
-    }
-  },
-  "overrides": [
-    {
-      "includes": ["**/*.{yml,yaml,md}"],
-      "formatter": {
-        "indentStyle": "space",
-        "indentWidth": 2
-      }
-    }
-  ]
+	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+	"files": {
+		"includes": ["app/**", "components/**", "hooks/**", "lib/**", "docs/**"]
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 120,
+		"attributePosition": "auto"
+	},
+	"linter": {
+		"enabled": false,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"noUnusedImports": "warn",
+				"noUnusedVariables": "warn"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"jsxQuoteStyle": "double",
+			"trailingCommas": "all",
+			"arrowParentheses": "always",
+			"bracketSpacing": true,
+			"bracketSameLine": false,
+			"attributePosition": "auto"
+		}
+	},
+	"assist": {
+		"actions": {
+			"source": {
+				"organizeImports": "off"
+			}
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.{yml,yaml,md}"],
+			"formatter": {
+				"indentStyle": "space",
+				"indentWidth": 2
+			}
+		}
+	]
 }

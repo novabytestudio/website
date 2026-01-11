@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 
 export default function Home() {
+	const year = new Date().getFullYear();
+
 	return (
 		<main className="min-h-screen flex flex-col items-center justify-center px-4 py-12 md:py-16 bg-background relative overflow-hidden">
 			<motion.div
@@ -121,7 +123,7 @@ export default function Home() {
 					animate={{ opacity: 0.7 }}
 					transition={{ delay: 1.1, duration: 0.8 }}
 				>
-					© 2025 Novabyte Studio. All rights reserved.
+					© {year} Novabyte Studio. All rights reserved.
 				</motion.footer>
 			</div>
 		</main>
